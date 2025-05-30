@@ -1,1 +1,66 @@
-...
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #fdfdfd;
+  color: #111;
+}
+header {
+  background: #e6f4ea;
+  padding: 1.5rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #19733a;
+}
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #19733a;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+footer {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  color: #555;
+}
+.button {
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background: #218838;
+}
+.hero {
+  background: linear-gradient(to right, #d7f9d2, #f2fce7);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero h2 {
+  font-size: 2rem;
+  color: #19733a;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+}
