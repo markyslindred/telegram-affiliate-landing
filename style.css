@@ -3,11 +3,15 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background: #fdfdfd;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #111;
 }
 header {
-  background: #e6f4ea;
+  background: rgba(255, 255, 255, 0.85);
   padding: 1.5rem;
   text-align: center;
 }
@@ -29,9 +33,11 @@ main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
 }
 footer {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
@@ -52,7 +58,6 @@ footer {
   background: #218838;
 }
 .hero {
-  background: linear-gradient(to right, #d7f9d2, #f2fce7);
   text-align: center;
   padding: 3rem 1rem;
 }
