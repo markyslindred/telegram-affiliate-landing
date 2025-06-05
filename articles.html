@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Статьи — Жизнь и Здоровье</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Последние статьи</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f8f9fa; color: #222; }
+    .article { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; }
+    a { text-decoration: none; color: #0077cc; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Статьи</h1>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="articles.html">Статьи</a>
-      <a href="recommend.html">Рекомендации</a>
-      <a href="about.html">О нас</a>
-      <a href="contact.html">Контакты</a>
-    </nav>
-  </header>
-  <main>
-    <div class="article-list">
-      <div>
-        <h3>5 признаков, что вашему организму не хватает витамина D</h3>
-        <p><em>31.05.2025</em></p>
-        <p>Усталость, слабость, боль в костях — возможно, это нехватка D. Подробнее...</p>
-      </div>
-      <div>
-        <h3>Коллаген после 30: правда или маркетинг?</h3>
-        <p><em>30.05.2025</em></p>
-        <p>Что такое коллаген и действительно ли он помогает коже и суставам.</p>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>&copy; 2025 Жизнь и Здоровье</p>
-  </footer>
+  <h1>Последние статьи о здоровье и красоте</h1>
+  <div id="articles"></div>
+  <script>
+    fetch("articles.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("articles");
+        data.forEach(article => {
+          const el = document.createElement("div");
+          el.className = "article";
+          el.innerHTML = `
+            <h2><a href="\${article.link}" target="_blank">\${article.title}</a></h2>
+            <p><strong>\${article.published}</strong></p>
+            <p>\${article.summary}</p>
+          `;
+          container.appendChild(el);
+        });
+      });
+  </script>
 </body>
 </html>
