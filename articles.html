@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Последние статьи</title>
+  <meta charset="UTF-8" />
+  <title>Статьи о здоровье и красоте</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; background: #f8f9fa; color: #222; }
-    .article { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    h2 { margin-top: 0; }
-    a { text-decoration: none; color: #0077cc; }
+    body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 2rem; color: #222; }
+    .article { background: #fff; margin-bottom: 1rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .article h2 { margin: 0 0 0.5rem; }
+    .article p { margin: 0.2rem 0; }
+    a { color: #0066cc; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <h1>Последние статьи о здоровье и красоте</h1>
-  <div id="articles"></div>
-  <script>
-    fetch("articles.json")
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("articles");
-        data.forEach(article => {
-          const el = document.createElement("div");
-          el.className = "article";
-          el.innerHTML = `
-            <h2><a href="\${article.link}" target="_blank">\${article.title}</a></h2>
-            <p><strong>\${article.published}</strong></p>
-            <p>\${article.summary}</p>
-          `;
-          container.appendChild(el);
-        });
-      });
-  </script>
+
+  <div class="article">
+    <h2><a href="https://meduza.io/feature/2025/06/01/pochemu-my-postoyanno-ustaly" target="_blank">
+      Почему мы постоянно устаём: 5 причин и как с ними справиться</a></h2>
+    <p><strong>01.06.2025</strong></p>
+    <p>Бессонница, стресс, дефицит витаминов или просто плохой воздух — вот, что часто мешает нам чувствовать себя бодрыми.</p>
+  </div>
+
+  <div class="article">
+    <h2><a href="https://vc.ru/beauty/2025/05/30/collagen-after-30" target="_blank">
+      Коллаген после 30: правда или маркетинг?</a></h2>
+    <p><strong>30.05.2025</strong></p>
+    <p>Что такое коллаген и действительно ли он помогает коже и суставам? Рассказываем, где правда, а где — маркетинговые уловки.</p>
+  </div>
+
+  <div class="article">
+    <h2><a href="https://health.mail.ru/article/5-signs-you-lack-vitamin-d/" target="_blank">
+      5 признаков, что вашему организму не хватает витамина D</a></h2>
+    <p><strong>29.05.2025</strong></p>
+    <p>Усталость, слабость, боль в костях — возможно, это нехватка D. Как это определить и восполнить дефицит?</p>
+  </div>
+
+  <div class="article">
+    <h2><a href="https://indicator.ru/news/gut-health-study-2025.htm" target="_blank">
+      Учёные подтвердили связь микробиома кишечника и настроения</a></h2>
+    <p><strong>28.05.2025</strong></p>
+    <p>Новое исследование показало, что разнообразие микрофлоры напрямую влияет на уровень тревожности и депрессии.</p>
+  </div>
+
+  <div class="article">
+    <h2><a href="https://habr.com/ru/news/2025/05/27/smart-nutrition/" target="_blank">
+      Умное питание: как технологии меняют подход к здоровью</a></h2>
+    <p><strong>27.05.2025</strong></p>
+    <p>От носимых датчиков до ИИ-диет — как технологии формируют наше будущее в области профилактики и питания.</p>
+  </div>
 </body>
 </html>
