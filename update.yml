@@ -1,0 +1,32 @@
+name: Update Articles
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Каждый день в 6:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install feedparser
+        run: pip install feedparser
+
+      - name: Run fetch script
+        run: python fetch_articles.py
+
+      - name: Commit and push
+        run: |
+          git config --global user.email "bot@example.com"
+          git config --global user.name "GitHub Bot"
+          git add articles.json
+          git commit -m "Update articles"
+          git push
