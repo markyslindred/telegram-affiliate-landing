@@ -2,43 +2,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Статьи</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        async function loadArticles() {
-            const response = await fetch("articles.json");
-            const articles = await response.json();
-            const container = document.getElementById("articles");
-            container.innerHTML = "";
-            articles.forEach(article => {
-                const block = document.createElement("div");
-                block.className = "article";
-                block.innerHTML = `
-                    <h2><a href="${article.link}" target="_blank">${article.title}</a></h2>
-                    <p><em>${article.date}</em></p>
-                    <p>${article.summary}</p>
-                `;
-                container.appendChild(block);
-            });
-        }
-        window.onload = loadArticles;
-    </script>
+  <meta charset="UTF-8">
+  <title>Статьи</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Статьи</h1>
-        <nav>
-            <a href="index.html">Главная</a>
-            <a href="articles.html">Статьи</a>
-            <a href="recommend.html">Рекомендации</a>
-            <a href="about.html">О нас</a>
-            <a href="contact.html">Контакты</a>
-        </nav>
-    </header>
-    <main id="articles">
-        Загрузка статей...
-    </main>
-    <footer>© 2025 Жизнь и Здоровье</footer>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="articles.html">Статьи</a>
+    <a href="recommend.html">Рекомендации</a>
+    <a href="about.html">О нас</a>
+    <a href="contact.html">Контакты</a>
+  </nav>
+  <main>
+    <h1>Последние статьи</h1><ul><li>Почему мы устаем</li><li>Витамин D и здоровье</li></ul>
+  </main>
 </body>
 </html>
